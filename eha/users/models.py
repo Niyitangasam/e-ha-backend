@@ -1,6 +1,7 @@
 from django.db import models
 from eha.manager import BaseManager
 from django.contrib.auth.models import (AbstractBaseUser, PermissionsMixin)
+from eha.utils.id_generators import ID_LENGTH, id_gen
 
 class User(AbstractBaseUser, PermissionsMixin):
     """
