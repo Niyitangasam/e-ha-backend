@@ -16,3 +16,5 @@ class User(AbstractBaseUser, PermissionsMixin):
         default='https://res.cloudinary.com/health-id/image/upload/'
         'v1554552278/Profile_Picture_Placeholder.png'
     )
+
+    USERNAME_FIELD = "username"
