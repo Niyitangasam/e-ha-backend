@@ -18,3 +18,24 @@ class User(AbstractBaseUser, PermissionsMixin):
     )
 
     USERNAME_FIELD = "username"
+
+class UserManager(BaseUserManager, BaseManager):
+    def create_user(self, **kwargs):
+        username = kwargs.get('username')
+        email = kwargs.get('email')
+        mobile_number = kwargs.get('mobile_number')
+        profile_image = kwargs.get('profile_image')
+        password = kwargs.get('password')
+
+        user = self.model.objects.filter(email=email).first()
+        user_number = self.model.objects.filter(mobile_number=mobile_number).first()
+
+        if user_number:
+             raise ValueError(
+                "User with mobile number {mobile_number} "
+                "already exists".format(mobile_number=mobile_number)
+            )
+        if user:
+            raise ValueError(
+                "User with email {email} already exists".format(email=email)
+            )

@@ -11,6 +11,9 @@ class CreateUser(graphene.Mutation):
         mobile_number = graphene.String(required=True)
         profile_image = graphene.String()
         password = graphene.String(required=True)
+        
+    success = graphene.List(graphene.String)
+    errors = graphene.List(graphene.String)
 
     def mutate(self, info, **kwargs):
         username = kwargs.get('username')
