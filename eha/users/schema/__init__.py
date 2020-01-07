@@ -1,0 +1,1 @@
+from .auth_mutations import Mutation as AuthMutation
