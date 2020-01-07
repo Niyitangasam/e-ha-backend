@@ -20,6 +20,12 @@ class CreateUser(graphene.Mutation):
     errors = graphene.List(graphene.String)
 
     def mutate(self, info, **kwargs):
-        user = User.objects.create_user(**kwargs)
-
-        return CreateUser(success=success, user=user)
+        
+        try:
+          user = User.objects.create_user(**kwargs)
+          
+          success = ['You have successfully registered']
+          return CreateUser(success=success, user=user)
+        except Exception as e:
+            errors = ["Something went wrong: {}".format(e)]
+            return CreateUser(errors=errors)

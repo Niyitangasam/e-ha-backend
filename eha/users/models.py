@@ -45,10 +45,11 @@ class User(AbstractBaseUser, PermissionsMixin):
     password = models.CharField(max_length=100)
     mobile_number = models.CharField(max_length=100, null=True, unique=True)
     profile_image = models.URLField(
+        null=True,
         default='https://res.cloudinary.com/health-id/image/upload/'
         'v1554552278/Profile_Picture_Placeholder.png'
     )
-
+    deleted_at = models.DateTimeField(blank=True, null=True)
     USERNAME_FIELD = "username"
     objects = UserManager()
     all_objects = UserManager(alive_only=False)
