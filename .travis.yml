@@ -9,7 +9,7 @@ install:
 
 
 script:
-  - coverage run --source='eha' manage.py test && coverage report
+  - coverage run --source='eha/apps' manage.py test && coverage report
 
 after_success:
   - coveralls
