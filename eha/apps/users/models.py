@@ -1,7 +1,7 @@
 from django.db import models
-from eha.manager import BaseManager
+from eha.apps.manager import BaseManager
 from django.contrib.auth.models import (AbstractBaseUser,BaseUserManager, PermissionsMixin)
-from eha.utils.id_generators import ID_LENGTH, id_gen
+from eha.apps.utils.id_generators import ID_LENGTH, id_gen
 
 class UserManager(BaseUserManager, BaseManager):
     def create_user(self, **kwargs):
