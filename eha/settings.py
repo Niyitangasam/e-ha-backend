@@ -128,5 +128,5 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 GRAPHENE = {
-    "SCHEMA": "eha.schema.schema",
+    "SCHEMA": "eha.apps.schema.schema",
 }

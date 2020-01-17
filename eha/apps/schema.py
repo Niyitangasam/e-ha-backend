@@ -1,6 +1,6 @@
 import graphene
 
-from eha.users.schema import AuthMutation
+from eha.apps.users.schema import AuthMutation
 
 class Mutation(AuthMutation, graphene.ObjectType):
     pass

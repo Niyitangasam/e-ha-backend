@@ -1,6 +1,6 @@
 import graphene
-from eha.users.models import User
-from eha.users.schema.types.user_type import UserType
+from eha.apps.users.models import User
+from eha.apps.users.schema.types.user_type import UserType
 
 class CreateUser(graphene.Mutation):
     """

@@ -1,7 +1,7 @@
 import graphene
 from graphene_django import DjangoObjectType
 
-from eha.users.models import User
+from eha.apps.users.models import User
 
 class UserType(DjangoObjectType):
     
